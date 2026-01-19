@@ -1,5 +1,4 @@
 # Présentation de l'équipe
-Projet de Jules, Hugo, Raphaël, Cian
-
+Projet de Jean, Sacha, Théo
 # Le projet 
 On sait pas encore
