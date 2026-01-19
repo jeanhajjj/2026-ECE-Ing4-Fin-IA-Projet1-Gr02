@@ -1,4 +1,4 @@
-# 2026 - ECE - Ing4 - Fin - IA Exploratoire et Symbolique - Groupe 1
+# 2026 - ECE - Ing4 - Fin - IA Exploratoire et Symbolique - Groupe 2
 
 Projet pédagogique d'exploration des approches d'intelligence artificielle symbolique et exploratoire pour les étudiants de l'ECE.
 
