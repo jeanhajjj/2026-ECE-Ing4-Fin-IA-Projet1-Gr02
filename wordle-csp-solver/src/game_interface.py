@@ -35,7 +35,7 @@ class WordleGameInterface:
         # Essayer de charger depuis les fichiers, sinon utiliser les dictionnaires par défaut
         if language.lower() == "french":
             try:
-                self.dict_manager.load_from_file('data/mon_dictionnaire_francais.txt')
+                self.dict_manager.load_from_file('data/dictionnaire_francais_complet.txt')
                 print(f"✅ Dictionnaire français personnalisé chargé ({self.dict_manager.size()} mots)")
             except FileNotFoundError:
                 self.dict_manager.load_default_french()
