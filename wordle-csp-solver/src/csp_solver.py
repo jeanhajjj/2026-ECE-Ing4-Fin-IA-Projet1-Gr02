@@ -39,6 +39,7 @@ class WordleCSPSolver:
         self.present_letters: Set[str] = set()  # letters in word but position unknown
         self.absent_letters: Set[str] = set()  # letters not in word
         self.wrong_positions: Dict[str, Set[int]] = {}  # letter -> positions where it's not
+        self.max_letter_count: Dict[str, int] = {}  # letter -> max number of occurrences
 
     def add_feedback(self, guess: str, feedback: List[Feedback]) -> None:
         """
@@ -51,11 +52,11 @@ class WordleCSPSolver:
         if len(guess) != self.word_length or len(feedback) != self.word_length:
             raise ValueError(f"Guess and feedback must be of length {self.word_length}")
 
-        # First pass: identify all CORRECT and PRESENT letters in this guess
-        letters_in_word = set()
+        # First pass: count CORRECT and PRESENT occurrences of each letter
+        letter_counts = {}
         for i, (letter, fb) in enumerate(zip(guess, feedback)):
             if fb == Feedback.CORRECT or fb == Feedback.PRESENT:
-                letters_in_word.add(letter)
+                letter_counts[letter] = letter_counts.get(letter, 0) + 1
 
         # Second pass: apply constraints
         for i, (letter, fb) in enumerate(zip(guess, feedback)):
@@ -70,9 +71,13 @@ class WordleCSPSolver:
                 self.wrong_positions[letter].add(i)
 
             elif fb == Feedback.ABSENT:
-                # Only mark as absent if it's not present/correct elsewhere in THIS guess
-                # This handles duplicate letters correctly
-                if letter not in letters_in_word:
+                # If this letter appears elsewhere as CORRECT/PRESENT,
+                # we know the EXACT count
+                if letter in letter_counts:
+                    # Set max count to the number of CORRECT/PRESENT occurrences
+                    self.max_letter_count[letter] = letter_counts[letter]
+                else:
+                    # Letter is completely absent
                     self.absent_letters.add(letter)
 
         self._apply_constraints()
@@ -117,6 +122,12 @@ class WordleCSPSolver:
             for pos in positions:
                 if word[pos] == letter:
                     return False
+
+        # Check maximum letter counts
+        for letter, max_count in self.max_letter_count.items():
+            actual_count = word.count(letter)
+            if actual_count > max_count:
+                return False
 
         return True
 
@@ -200,6 +211,7 @@ class WordleCSPSolver:
         self.present_letters = set()
         self.absent_letters = set()
         self.wrong_positions = {}
+        self.max_letter_count = {}
 
     def get_stats(self) -> Dict:
         """
