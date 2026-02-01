@@ -1,4 +1,3 @@
-import sys
 import os
 from game_interface import WordleGameInterface
 from dictionary_manager import DictionaryManager

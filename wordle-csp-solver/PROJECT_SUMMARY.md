@@ -110,23 +110,28 @@ Score = Σ freq(lettre, position) + bonus(unicité)
 ```
 wordle-csp-solver/
 ├── src/
-│   ├── __init__.py                 # Package initialization
-│   ├── csp_solver.py               # ⭐ Cœur du solveur CSP
-│   ├── dictionary_manager.py      # Gestion dictionnaires
-│   ├── optimizer.py                # 🧮 Algorithmes d'optimisation
-│   ├── llm_integration.py          # 🤖 Intégration OpenAI
-│   └── game_interface.py           # 🎮 Interface utilisateur
-├── tests/
-│   ├── __init__.py
-│   ├── test_csp_solver.py          # Tests CSP (7 tests)
-│   └── test_optimizer.py           # Tests optimizer (8 tests)
-├── demo.py                          # 🎯 6 démonstrations
-├── requirements.txt                 # Dépendances
-├── .env.example                     # Template config
-├── .gitignore                      # Git ignore
-├── README.md                        # Documentation complète
-├── QUICKSTART.md                    # Guide rapide
-└── PROJECT_SUMMARY.md              # Ce fichier
+│   ├── __init__.py                    # Package initialization
+│   ├── csp_solver.py                  # ⭐ Cœur du solveur CSP
+│   ├── dictionary_manager.py         # Gestion dictionnaires
+│   ├── optimizer.py                   # 🧮 Algorithmes d'optimisation
+│   ├── llm_integration.py             # 🤖 Intégration OpenAI
+│   ├── game_interface.py              # 🎮 Interface utilisateur
+│   ├── demo.py                        # 🎯 6 démonstrations
+│   ├── jouer_english_complet.py       # Jeu anglais
+│   ├── jouer_francais_perso.py        # Jeu français
+│   ├── test_csp_solver.py             # Tests CSP (7 tests)
+│   ├── test_optimizer.py              # Tests optimizer (8 tests)
+│   ├── test_snail_bug.py              # Test régression bug SNAIL
+│   ├── requirements.txt               # Dépendances
+│   └── __pycache__/
+├── data/                               # Dictionnaires optionnels
+├── .env.example                        # Template config
+├── .gitignore                         # Git ignore
+├── LICENSE
+├── README.md                           # Documentation complète
+├── QUICKSTART.md                       # Guide rapide
+├── INDEX.md                            # Index détaillé
+└── PROJECT_SUMMARY.md                 # Ce fichier
 ```
 
 ## 🔧 Technologies utilisées
@@ -249,25 +254,26 @@ Résultat: 4 tentatives
 
 ### Installation rapide
 ```bash
-pip install -r requirements.txt
+pip install -r src/requirements.txt
 ```
 
 ### Lancer le jeu
 ```bash
-cd src
-python game_interface.py
+python src/game_interface.py
 ```
 
 ### Lancer les démos
 ```bash
-python demo.py
+python src/demo.py
+python src/jouer_english_complet.py
+python src/jouer_francais_perso.py
 ```
 
 ### Lancer les tests
 ```bash
-cd tests
-python test_csp_solver.py
-python test_optimizer.py
+python src/test_csp_solver.py
+python src/test_optimizer.py
+python src/test_snail_bug.py
 ```
 
 ## 👥 Contexte

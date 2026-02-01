@@ -3,9 +3,6 @@ Démonstration du Wordle CSP Solver
 Montre les capacités du solveur avec différentes stratégies.
 """
 
-import sys
-import os
-
 from csp_solver import WordleCSPSolver, Feedback
 from dictionary_manager import DictionaryManager
 from optimizer import WordleOptimizer

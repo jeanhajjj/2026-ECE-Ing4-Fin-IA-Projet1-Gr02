@@ -30,18 +30,24 @@ Solveur intelligent de Wordle utilisant la programmation par contraintes (CSP) a
 ```
 wordle-csp-solver/
 ├── src/
-│   ├── csp_solver.py          # Solveur CSP principal
-│   ├── dictionary_manager.py  # Gestion des dictionnaires
-│   ├── llm_integration.py     # Intégration OpenAI avec function calling
-│   ├── optimizer.py            # Stratégies d'optimisation avancées
-│   └── game_interface.py      # Interface CLI interactive
-├── tests/
-│   ├── test_csp_solver.py     # Tests du solveur
-│   └── test_optimizer.py      # Tests de l'optimiseur
-├── data/                       # Dictionnaires (optionnel)
-├── requirements.txt
-├── .env.example
-└── README.md
+│   ├── __init__.py
+│   ├── csp_solver.py             # Solveur CSP principal
+│   ├── dictionary_manager.py     # Gestion des dictionnaires
+│   ├── llm_integration.py        # Intégration OpenAI avec function calling
+│   ├── optimizer.py              # Stratégies d'optimisation avancées
+│   ├── game_interface.py         # Interface CLI interactive
+│   ├── demo.py                   # Démonstrations du solveur
+│   ├── jouer_english_complet.py  # Interface jeu en anglais
+│   ├── jouer_francais_perso.py   # Interface jeu en français
+│   ├── test_csp_solver.py        # Tests du solveur
+│   ├── test_optimizer.py         # Tests de l'optimiseur
+│   ├── test_snail_bug.py         # Test du correctif de bug
+│   ├── requirements.txt
+│   └── __pycache__/
+├── data/                          # Dictionnaires (optionnel)
+├── LICENSE
+├── README.md
+└── [autres fichiers de documentation]
 ```
 
 ## 📦 Installation
@@ -201,9 +207,8 @@ response = llm.chat_with_context(
 ### Lancer tous les tests
 
 ```bash
-cd tests
-python test_csp_solver.py
-python test_optimizer.py
+python src/test_csp_solver.py
+python src/test_optimizer.py
 ```
 
 ### Tests disponibles

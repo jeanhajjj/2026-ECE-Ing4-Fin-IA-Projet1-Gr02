@@ -80,23 +80,26 @@
 
 | Fichier | Tests | Description |
 |---------|-------|-------------|
-| **[test_csp_solver.py](tests/test_csp_solver.py)** | 7 | Tests du solveur CSP |
-| **[test_optimizer.py](tests/test_optimizer.py)** | 8 | Tests de l'optimiseur |
+| **[test_csp_solver.py](src/test_csp_solver.py)** | 7 | Tests du solveur CSP |
+| **[test_optimizer.py](src/test_optimizer.py)** | 8 | Tests de l'optimiseur |
+| **[test_snail_bug.py](src/test_snail_bug.py)** | 1 | Test de régression du bug SNAIL |
 
-**Total tests** : 15 tests unitaires (100% pass rate)
+**Total tests** : 16 tests unitaires
 
-### Démonstrations
+### Démonstrations et Jeux
 
-| Fichier | Démos | Description |
-|---------|-------|-------------|
-| **[demo.py](demo.py)** | 6 | Démonstrations interactives complètes |
+| Fichier | Description |
+|---------|-------------|
+| **[demo.py](src/demo.py)** | 6 démonstrations interactives complètes |
+| **[jouer_english_complet.py](src/jouer_english_complet.py)** | Interface jeu en anglais |
+| **[jouer_francais_perso.py](src/jouer_francais_perso.py)** | Interface jeu en français |
 
 ## 🎯 Guide par objectif
 
 ### "Je veux comprendre le projet"
 1. Lire [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) (10 min)
 2. Regarder la structure du code ci-dessus
-3. Lancer `python demo.py` pour voir en action
+3. Lancer `python src/demo.py` pour voir en action
 
 ### "Je veux utiliser le solveur"
 1. Lire [QUICKSTART.md](QUICKSTART.md) (5 min)
@@ -106,12 +109,12 @@
 ### "Je veux comprendre le CSP"
 1. Lire README.md section "Algorithme CSP"
 2. Étudier `src/csp_solver.py`
-3. Lancer `python tests/test_csp_solver.py`
+3. Lancer `python src/test_csp_solver.py`
 
 ### "Je veux comprendre l'optimisation"
 1. Lire README.md section "Stratégies d'optimisation"
 2. Étudier `src/optimizer.py`
-3. Lancer `python demo.py` et observer les stratégies
+3. Lancer `python src/demo.py` et observer les stratégies
 
 ### "Je veux intégrer le LLM"
 1. Lire [LLM_INTEGRATION_GUIDE.md](LLM_INTEGRATION_GUIDE.md)

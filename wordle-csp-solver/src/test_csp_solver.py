@@ -2,10 +2,6 @@
 Unit tests for CSP Solver
 """
 
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
-
 from csp_solver import WordleCSPSolver, Feedback
 
 

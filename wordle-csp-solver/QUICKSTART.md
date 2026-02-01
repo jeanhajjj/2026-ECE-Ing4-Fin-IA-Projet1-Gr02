@@ -17,7 +17,7 @@ cp .env.example .env
 ## Lancer la démonstration
 
 ```bash
-python demo.py
+python src/demo.py
 ```
 
 Cette démo interactive montre toutes les capacités du solveur.
@@ -25,8 +25,14 @@ Cette démo interactive montre toutes les capacités du solveur.
 ## Jouer maintenant
 
 ```bash
-cd src
-python game_interface.py
+# Mode interactif anglais
+python src/jouer_english_complet.py
+
+# Mode jeu français
+python src/jouer_francais_perso.py
+
+# Ou directement
+python src/game_interface.py
 ```
 
 Choisissez ensuite :
@@ -38,11 +44,10 @@ Choisissez ensuite :
 
 ```bash
 # Tester le solveur CSP
-cd tests
-python test_csp_solver.py
+python src/test_csp_solver.py
 
 # Tester l'optimiseur
-python test_optimizer.py
+python src/test_optimizer.py
 ```
 
 ## Utilisation programmatique simple
@@ -137,11 +142,16 @@ Feedback: 🟩 🟩 🟩 🟩 🟩
 
 ```
 src/
-├── csp_solver.py        ← Cœur du solveur CSP
-├── dictionary_manager.py ← Gère les dictionnaires
-├── optimizer.py         ← Stratégies avancées
-├── llm_integration.py   ← Intégration OpenAI
-└── game_interface.py    ← Interface utilisateur
+├── csp_solver.py             ← Cœur du solveur CSP
+├── dictionary_manager.py     ← Gère les dictionnaires
+├── optimizer.py              ← Stratégies avancées
+├── llm_integration.py        ← Intégration OpenAI
+├── game_interface.py         ← Interface utilisateur
+├── demo.py                   ← Démonstrations
+├── jouer_english_complet.py  ← Jeu anglais
+├── jouer_francais_perso.py   ← Jeu français
+├── test_csp_solver.py        ← Tests CSP
+└── test_optimizer.py         ← Tests optimiseur
 ```
 
 ## Concepts clés en 2 minutes
