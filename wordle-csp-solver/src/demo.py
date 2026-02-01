@@ -1,6 +1,46 @@
 """
-Démonstration du Wordle CSP Solver
-Montre les capacités du solveur avec différentes stratégies.
+Wordle CSP Solver - Interactive Demonstrations
+
+Complete demonstrations showcasing all solver capabilities:
+
+Demo 1: Basic Solving with CSP
+  - Constraint satisfaction with progressive filtering
+  - Feedback application and word elimination
+  - Statistics and termination
+
+Demo 2: Information Theory
+  - Shannon entropy calculation
+  - Information gain measurement
+  - Comparing word strategies by entropy
+
+Demo 3: Constraint Propagation
+  - Progressive constraint application
+  - CSP domain reduction
+  - Effect on possible solutions
+
+Demo 4: Strategy Comparison
+  - Entropy maximization strategy
+  - Minimax strategy (minimize worst case)
+  - Frequency-based strategy
+
+Demo 5: Pattern Analysis
+  - Letter frequency distribution
+  - Common prefixes and suffixes
+  - Vowel position patterns
+
+Demo 6: Full Game
+  - Automatic solving from start to finish
+  - Strategic first guess selection
+  - Real-time progress tracking
+
+Usage:
+    python src/demo.py
+
+Features:
+  - Colorized output for clarity
+  - Step-by-step progression
+  - Interactive pauses between demos
+  - Real data from actual dictionaries
 """
 
 from csp_solver import WordleCSPSolver, Feedback
@@ -12,7 +52,12 @@ init(autoreset=True)
 
 
 def demo_basic_solving():
-    """Démonstration de la résolution basique."""
+    """
+    Démonstration de la résolution basique.
+    
+    Shows how the CSP solver applies constraints progressively
+    to narrow down the solution space.
+    """
     print(f"\n{Fore.CYAN}{'='*60}")
     print(f"DEMO 1: Résolution basique avec contraintes CSP")
     print(f"{'='*60}{Style.RESET_ALL}\n")
@@ -65,7 +110,12 @@ def demo_basic_solving():
 
 
 def demo_information_theory():
-    """Démonstration de la théorie de l'information."""
+    """
+    Démonstration de la théorie de l'information.
+    
+    Shows Shannon entropy calculation for different words and how it
+    measures the expected information gain for distinguishing candidates.
+    """
     print(f"\n{Fore.CYAN}{'='*60}")
     print(f"DEMO 2: Optimisation par théorie de l'information")
     print(f"{'='*60}{Style.RESET_ALL}\n")
@@ -98,7 +148,12 @@ def demo_information_theory():
 
 
 def demo_constraint_propagation():
-    """Démonstration de la propagation de contraintes."""
+    """
+    Démonstration de la propagation de contraintes.
+    
+    Illustrates how each constraint progressively reduces the solution space
+    by filtering out words that don't satisfy all accumulated constraints.
+    """
     print(f"\n{Fore.CYAN}{'='*60}")
     print(f"DEMO 3: Propagation de contraintes CSP")
     print(f"{'='*60}{Style.RESET_ALL}\n")
@@ -132,7 +187,14 @@ def demo_constraint_propagation():
 
 
 def demo_strategy_comparison():
-    """Démonstration de comparaison de stratégies."""
+    """
+    Démonstration de comparaison de stratégies.
+    
+    Compares three different optimization strategies:
+    1. Entropy maximization - maximize information gain
+    2. Minimax - minimize worst-case scenario
+    3. Frequency-based - prefer common letters
+    """
     print(f"\n{Fore.CYAN}{'='*60}")
     print(f"DEMO 4: Comparaison de stratégies d'optimisation")
     print(f"{'='*60}{Style.RESET_ALL}\n")
@@ -170,7 +232,14 @@ def demo_strategy_comparison():
 
 
 def demo_pattern_analysis():
-    """Démonstration d'analyse de patterns."""
+    """
+    Démonstration d'analyse de patterns.
+    
+    Shows linguistic pattern analysis including:
+    - Letter frequency distribution by position
+    - Common prefixes and suffixes
+    - Vowel placement patterns
+    """
     print(f"\n{Fore.CYAN}{'='*60}")
     print(f"DEMO 5: Analyse de patterns linguistiques")
     print(f"{'='*60}{Style.RESET_ALL}\n")
@@ -206,7 +275,16 @@ def demo_pattern_analysis():
 
 
 def demo_full_game():
-    """Démonstration d'une partie complète."""
+    """
+    Démonstration d'une partie complète.
+    
+    Automatic full game demonstration:
+    - Starts with strategic first guess
+    - Applies feedback progressively
+    - Uses best guess strategy
+    - Shows real-time progress tracking
+    - Displays successful solution
+    """
     print(f"\n{Fore.CYAN}{'='*60}")
     print(f"DEMO 6: Partie complète automatique")
     print(f"{'='*60}{Style.RESET_ALL}\n")
@@ -285,7 +363,14 @@ def demo_full_game():
 
 
 def main():
-    """Lancer toutes les démos."""
+    """
+    Main entry point for demonstrations.
+    
+    Runs all 6 demonstrations in sequence with interactive pauses
+    between each one to allow user review of results.
+    
+    Press Ctrl+C at any time to interrupt.
+    """
     print(f"\n{Fore.GREEN}{Style.BRIGHT}")
     print("╔═══════════════════════════════════════════════════════════╗")
     print("║                                                           ║")

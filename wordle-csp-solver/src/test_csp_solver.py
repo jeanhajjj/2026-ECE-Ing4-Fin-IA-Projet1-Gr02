@@ -1,12 +1,34 @@
 """
-Unit tests for CSP Solver
+Unit Tests for CSP Solver Module
+
+Tests the constraint satisfaction solver's ability to:
+  - Apply feedback constraints (correct/present/absent letters)
+  - Filter word lists based on constraints
+  - Track solver statistics
+  - Reset solver state
+
+Test Coverage:
+  - Basic constraints (correct positions, absent letters)
+  - Present letters with wrong position constraints
+  - Multiple feedback applications
+  - Word elimination
+  - Best guess selection
+  - Statistics tracking
+  - Solver reset functionality
+
+Run with: python -m pytest test_csp_solver.py
 """
 
 from csp_solver import WordleCSPSolver, Feedback
 
 
 def test_basic_constraints():
-    """Test basic constraint satisfaction."""
+    """
+    Test basic constraint satisfaction.
+    
+    Tests that correct positions (green) and absent letters (gray) properly
+    filter the dictionary.
+    """
     dictionary = ["apple", "apply", "aptly", "aback", "about", "break", "bread"]
     solver = WordleCSPSolver(5, dictionary)
 

@@ -1,7 +1,20 @@
 """
-Test to verify the SNAIL bug is fixed.
-The bug: when guessing "SANES" against "SNAIL", the solver was suggesting
-words with 'S' even though 'S' should have been eliminated.
+Regression Test: SNAIL Duplicate Letter Bug
+
+Bug Description:
+  When guessing "SANES" against "SNAIL", the first 'S' returns green (correct),
+  but the last 'S' returns gray (not in word). The solver was incorrectly including
+  words with 'S' in wrong positions due to improper duplicate letter handling.
+
+Root Cause:
+  The feedback processing didn't account for the fact that a letter can appear
+  multiple times in a word, with different feedbacks for each occurrence.
+
+Fix Applied:
+  Improved constraint propagation to track which instances of letters have been
+  used/eliminated in feedback processing.
+
+This test ensures the bug remains fixed and duplicate letters are handled correctly.
 """
 
 from csp_solver import WordleCSPSolver, Feedback
@@ -10,13 +23,20 @@ from csp_solver import WordleCSPSolver, Feedback
 def simulate_wordle_feedback(guess: str, target: str) -> list:
     """
     Simulate Wordle feedback for a guess against a target word.
+    
+    Correctly handles duplicate letters by tracking which target letters
+    have been matched to guess letters.
 
     Args:
-        guess: The guessed word
-        target: The target/secret word
+        guess: The guessed word (5 letters)
+        target: The target/secret word (5 letters)
 
     Returns:
-        List of Feedback enums
+        List of Feedback enums (one per letter in guess)
+        
+    Example:
+        >>> simulate_wordle_feedback("arose", "house")
+        [Feedback.ABSENT, Feedback.ABSENT, Feedback.PRESENT, Feedback.CORRECT, Feedback.CORRECT]
     """
     feedback = []
     target_letters = list(target)

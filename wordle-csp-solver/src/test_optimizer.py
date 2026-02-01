@@ -1,12 +1,37 @@
 """
-Unit tests for Optimizer
+Unit Tests for Optimizer Module
+
+Tests the optimization strategies for word selection:
+  - Information theory (entropy calculation)
+  - Best guess selection by entropy
+  - Letter frequency analysis
+  - Word scoring by frequency
+  - Minimax strategy
+  - Hard mode constraints
+
+Test Coverage:
+  - Entropy calculation for information gain
+  - Finding best guess by entropy
+  - Letter frequency computation
+  - Word scoring based on frequencies
+  - Strategic first guess selection
+  - Pattern analysis (prefixes, suffixes, vowels)
+  - Minimax strategy implementation
+  - Hard mode compliance
+
+Run with: python -m pytest test_optimizer.py
 """
 
 from optimizer import WordleOptimizer
 
 
 def test_entropy_calculation():
-    """Test entropy calculation."""
+    """
+    Test entropy calculation for words.
+    
+    Verifies that Shannon entropy is correctly calculated for a word
+    based on how it distinguishes between candidate words.
+    """
     dictionary = ["house", "mouse", "horse", "louse", "douse"]
     optimizer = WordleOptimizer(dictionary)
 
