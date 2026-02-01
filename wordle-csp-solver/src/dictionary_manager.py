@@ -96,7 +96,7 @@ class DictionaryManager:
             "unity", "until", "upper", "urban", "usage", "usual", "valid", "value", "video", "virus",
             "visit", "vital", "vocal", "voice", "waste", "watch", "water", "wheel", "where", "which",
             "while", "white", "whole", "whose", "woman", "women", "world", "worry", "worse", "worst",
-            "worth", "would", "wound", "write", "wrong", "wrote", "young", "youth"
+            "worth", "would", "wound", "write", "wrong", "wrote", "young", "youth", "crane"
         ]
 
         self.words = set(w for w in common_words if len(w) == self.word_length)

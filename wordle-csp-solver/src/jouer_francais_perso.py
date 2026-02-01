@@ -6,9 +6,12 @@ from csp_solver import WordleCSPSolver
 
 # Charger votre dictionnaire personnalisé
 dict_mgr = DictionaryManager()
-dict_mgr.load_from_file('../data/mon_dictionnaire_francais.txt')
-
-print(f"🇫🇷 Dictionnaire personnel chargé: {dict_mgr.size()} mots")
+try:
+    dict_mgr.load_from_file('../data/mon_dictionnaire_francais.txt')
+    print(f"🇫🇷 Dictionnaire personnel chargé: {dict_mgr.size()} mots")
+except FileNotFoundError:
+    dict_mgr.load_default_french()
+    print(f"🇫🇷 Dictionnaire français par défaut: {dict_mgr.size()} mots")
 print(f"✅ FLEUR présent: {dict_mgr.contains('fleur')}")
 print(f"✅ COEUR présent: {dict_mgr.contains('coeur')}")
 print(f"✅ SULLY présent: {dict_mgr.contains('sully')}")

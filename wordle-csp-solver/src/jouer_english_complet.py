@@ -6,9 +6,12 @@ from csp_solver import WordleCSPSolver
 
 # Charger le dictionnaire complet
 dict_mgr = DictionaryManager()
-dict_mgr.load_from_file('../data/wordle_english_5letters.txt')
-
-print(f"📚 Dictionnaire Wordle officiel: {dict_mgr.size()} mots")
+try:
+    dict_mgr.load_from_file('../data/wordle_english_5letters.txt')
+    print(f"📚 Dictionnaire Wordle officiel chargé: {dict_mgr.size()} mots")
+except FileNotFoundError:
+    dict_mgr.load_default_english()
+    print(f"📚 Dictionnaire Wordle par défaut: {dict_mgr.size()} mots")
 print()
 
 # Créer le jeu
