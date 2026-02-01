@@ -1,12 +1,12 @@
 import sys
-sys.path.insert(0, 'src')
+import os
 from game_interface import WordleGameInterface
 from dictionary_manager import DictionaryManager
 from csp_solver import WordleCSPSolver
 
 # Charger le dictionnaire complet
 dict_mgr = DictionaryManager()
-dict_mgr.load_from_file('data/wordle_english_5letters.txt')
+dict_mgr.load_from_file('../data/wordle_english_5letters.txt')
 
 print(f"📚 Dictionnaire Wordle officiel: {dict_mgr.size()} mots")
 print()

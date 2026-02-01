@@ -4,7 +4,7 @@ The bug: when guessing "SANES" against "SNAIL", the solver was suggesting
 words with 'S' even though 'S' should have been eliminated.
 """
 
-from src.csp_solver import WordleCSPSolver, Feedback
+from csp_solver import WordleCSPSolver, Feedback
 
 
 def simulate_wordle_feedback(guess: str, target: str) -> list:

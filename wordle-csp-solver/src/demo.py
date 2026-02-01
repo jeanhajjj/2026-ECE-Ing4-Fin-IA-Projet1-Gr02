@@ -5,7 +5,6 @@ Montre les capacités du solveur avec différentes stratégies.
 
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from csp_solver import WordleCSPSolver, Feedback
 from dictionary_manager import DictionaryManager

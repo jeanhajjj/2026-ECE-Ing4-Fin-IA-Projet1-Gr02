@@ -1,12 +1,12 @@
 import sys
-sys.path.insert(0, 'src')
+import os
 from game_interface import WordleGameInterface
 from dictionary_manager import DictionaryManager
 from csp_solver import WordleCSPSolver
 
 # Charger votre dictionnaire personnalisé
 dict_mgr = DictionaryManager()
-dict_mgr.load_from_file('data/mon_dictionnaire_francais.txt')
+dict_mgr.load_from_file('../data/mon_dictionnaire_francais.txt')
 
 print(f"🇫🇷 Dictionnaire personnel chargé: {dict_mgr.size()} mots")
 print(f"✅ FLEUR présent: {dict_mgr.contains('fleur')}")
