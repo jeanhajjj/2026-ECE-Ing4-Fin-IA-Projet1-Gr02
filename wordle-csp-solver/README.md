@@ -1,5 +1,7 @@
 # 🎮 Wordle CSP Solver
 
+Slides : https://gamma.app/docs/Wordle-CSP-Solver-avec-integration-LLM-7o9ldqgi3d76b0g
+
 ## Vue d'ensemble
 
 **Wordle CSP Solver** est un résolveur IA sophistiqué pour le jeu Wordle utilisant des algorithmes de **Constraint Satisfaction** combinés avec la **théorie de l'information** et une intégration optionnelle d'LLM.
