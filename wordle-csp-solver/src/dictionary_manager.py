@@ -23,10 +23,16 @@ class DictionaryManager:
     def load_from_file(self, filepath: str) -> None:
         """
         Load words from a text file (one word per line).
+        Resolves relative paths relative to the module's directory.
 
         Args:
-            filepath: Path to dictionary file
+            filepath: Path to dictionary file (absolute or relative to src/ directory)
         """
+        # If filepath is relative, resolve it relative to the src/ directory
+        if not os.path.isabs(filepath):
+            module_dir = os.path.dirname(os.path.abspath(__file__))
+            filepath = os.path.join(module_dir, filepath)
+        
         if not os.path.exists(filepath):
             raise FileNotFoundError(f"Dictionary file not found: {filepath}")
 
@@ -90,7 +96,7 @@ class DictionaryManager:
             "unity", "until", "upper", "urban", "usage", "usual", "valid", "value", "video", "virus",
             "visit", "vital", "vocal", "voice", "waste", "watch", "water", "wheel", "where", "which",
             "while", "white", "whole", "whose", "woman", "women", "world", "worry", "worse", "worst",
-            "worth", "would", "wound", "write", "wrong", "wrote", "young", "youth"
+            "worth", "would", "wound", "write", "wrong", "wrote", "young", "youth", "crane"
         ]
 
         self.words = set(w for w in common_words if len(w) == self.word_length)
