@@ -1,7 +1,7 @@
 # Wordle CSP Solver avec Intégration LLM
 
 Solveur intelligent de Wordle utilisant la programmation par contraintes (CSP) avec OR-Tools et l'intégration d'un LLM via function calling.
-
+Slides : https://gamma.app/docs/Wordle-CSP-Solver-avec-integration-LLM-7o9ldqgi3d76b0g
 ## 📋 Table des matières
 
 - [Fonctionnalités](#fonctionnalités)
