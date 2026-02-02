@@ -36,7 +36,7 @@ class WordleGameInterface:
         if language.lower() == "french":
             try:
                 # Essayer d'abord le nouveau dictionnaire complet
-                self.dict_manager.load_from_file('/Users/jeanhaj/Desktop/ING4/IA/2026-ECE-Ing4-Fin-IA-Projet1-Gr02/wordle-csp-solver/data/mon_dictionnaire_francais.txt')
+                self.dict_manager.load_from_file('../data/mon_dictionnaire_francais.txt')
                 print(f"✅ Dictionnaire français complet chargé ({self.dict_manager.size()} mots)")
             except FileNotFoundError:
                 try:
@@ -49,7 +49,7 @@ class WordleGameInterface:
                     print(f"⚠️  Utilisation du dictionnaire français par défaut ({self.dict_manager.size()} mots)")
         else:
             try:
-                self.dict_manager.load_from_file('/Users/jeanhaj/Desktop/ING4/IA/2026-ECE-Ing4-Fin-IA-Projet1-Gr02/wordle-csp-solver/data/wordle_english_5letters.txt')
+                self.dict_manager.load_from_file('../data/wordle_english_5letters.txt')
                 print(f"✅ Dictionnaire anglais complet chargé ({self.dict_manager.size()} mots)")
             except FileNotFoundError:
                 self.dict_manager.load_default_english()
